@@ -1,9 +1,5 @@
-<p align="center">
-  <img src="https://github.com/gzeinnumer/MyLibUtils/blob/master/preview/bg.jpg" width="400"/>
-</p>
-
 <h1 align="center">
-    MyLibUtils
+    MyLibSimpleTextWatcher
 </h1>
 
 <p align="center">
