@@ -2,20 +2,26 @@ package com.gzeinnumer.mylibsimpletextwatcher;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.EditText;
+
+import com.gzeinnumer.mylibsimpletextwatcher.interfaceCallBack.AfterTextChanged;
+import com.gzeinnumer.mylibsimpletextwatcher.interfaceCallBack.BeforeTextChanged;
+import com.gzeinnumer.mylibsimpletextwatcher.interfaceCallBack.OnTextChanged;
 
 public class SimpleTextWatcher implements TextWatcher {
 
+    private BeforeTextChanged _callBackBTC;
+    private OnTextChanged _callBackOTC;
+    private AfterTextChanged _callBackATC;
 
-    public SimpleTextWatcher(TWBeforeTextChanged callBack) {
+    public SimpleTextWatcher(BeforeTextChanged callBack) {
         this._callBackBTC = callBack;
     }
 
-    public SimpleTextWatcher(TWnOnTextChanged callBack) {
+    public SimpleTextWatcher(OnTextChanged callBack) {
         this._callBackOTC = callBack;
     }
 
-    public SimpleTextWatcher(TWAfterTextChanged callBack) {
+    public SimpleTextWatcher(AfterTextChanged callBack) {
         this._callBackATC = callBack;
     }
 
@@ -35,21 +41,5 @@ public class SimpleTextWatcher implements TextWatcher {
     public void afterTextChanged(Editable s) {
         if (_callBackATC!=null)
             _callBackATC.afterTextChanged(s);
-    }
-
-    private TWBeforeTextChanged _callBackBTC;
-    private TWnOnTextChanged _callBackOTC;
-    private TWAfterTextChanged _callBackATC;
-
-    interface TWBeforeTextChanged {
-        void beforeTextChanged(CharSequence s, int start, int count, int after);
-    }
-
-    interface TWnOnTextChanged {
-        void onTextChanged(CharSequence s, int start, int before, int count);
-    }
-
-    interface TWAfterTextChanged {
-        void afterTextChanged(Editable s);
     }
 }

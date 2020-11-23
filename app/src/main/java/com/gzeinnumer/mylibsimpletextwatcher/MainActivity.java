@@ -8,6 +8,10 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.EditText;
 
+import com.gzeinnumer.mylibsimpletextwatcher.interfaceCallBack.AfterTextChanged;
+import com.gzeinnumer.mylibsimpletextwatcher.interfaceCallBack.BeforeTextChanged;
+import com.gzeinnumer.mylibsimpletextwatcher.interfaceCallBack.OnTextChanged;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText editText;
@@ -46,21 +50,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void after() {
-        editText.addTextChangedListener(new SimpleTextWatcher(new SimpleTextWatcher.TWBeforeTextChanged() {
+        editText.addTextChangedListener(new SimpleTextWatcher(new BeforeTextChanged() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 Log.d(TAG, "beforeTextChanged: "+s+"_"+start+"_"+count+"_"+after);
             }
         }));
 
-        editText.addTextChangedListener(new SimpleTextWatcher(new SimpleTextWatcher.TWnOnTextChanged() {
+        editText.addTextChangedListener(new SimpleTextWatcher(new OnTextChanged() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 Log.d(TAG, "onTextChanged: "+s+"_"+start+"_"+before+"_"+count);
             }
         }));
 
-        editText.addTextChangedListener(new SimpleTextWatcher(new SimpleTextWatcher.TWAfterTextChanged() {
+        editText.addTextChangedListener(new SimpleTextWatcher(new AfterTextChanged() {
             @Override
             public void afterTextChanged(Editable s) {
                 Log.d(TAG, "afterTextChanged: "+s.toString());

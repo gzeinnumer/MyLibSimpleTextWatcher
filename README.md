@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-    <a><img src="https://img.shields.io/badge/Version-1.0.0-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-1.0.1-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/Koltin-Suport-green?logo=kotlin&style=flat"></a>
@@ -82,7 +82,7 @@ editText.addTextChangedListener(object : TextWatcher {
 ### beforeTextChanged.
 > **Java**
 ```java
-editText.addTextChangedListener(new SimpleTextWatcher(new SimpleTextWatcher.TWBeforeTextChanged() {
+editText.addTextChangedListener(new SimpleTextWatcher(new BeforeTextChanged() {
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         Log.d(TAG, "beforeTextChanged: "+s+"_"+start+"_"+count+"_"+after);
@@ -91,7 +91,7 @@ editText.addTextChangedListener(new SimpleTextWatcher(new SimpleTextWatcher.TWBe
 ```
 > **Kotlin**
 ```kotlin
-editText.addTextChangedListener(SimpleTextWatcher(object : SimpleTextWatcher.TWBeforeTextChanged {
+editText.addTextChangedListener(SimpleTextWatcher(object : BeforeTextChanged {
     override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
         Log.d(TAG, "beforeTextChanged: " + s + "_" + start + "_" + count + "_" + after)
     }
@@ -102,7 +102,7 @@ editText.addTextChangedListener(SimpleTextWatcher(object : SimpleTextWatcher.TWB
 ### onTextChanged.
 > **Java**
 ```java
-editText.addTextChangedListener(new SimpleTextWatcher(new SimpleTextWatcher.TWnOnTextChanged() {
+editText.addTextChangedListener(new SimpleTextWatcher(new OnTextChanged() {
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         Log.d(TAG, "onTextChanged: "+s+"_"+start+"_"+before+"_"+count);
@@ -111,7 +111,7 @@ editText.addTextChangedListener(new SimpleTextWatcher(new SimpleTextWatcher.TWnO
 ```
 > **Kotlin**
 ```kotlin
-editText.addTextChangedListener(SimpleTextWatcher(object : SimpleTextWatcher.TWnOnTextChanged {
+editText.addTextChangedListener(SimpleTextWatcher(object : OnTextChanged {
     override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
         Log.d(TAG, "onTextChanged: " + s + "_" + start + "_" + before + "_" + count)
     }
@@ -123,7 +123,7 @@ editText.addTextChangedListener(SimpleTextWatcher(object : SimpleTextWatcher.TWn
 To check your date is in range between 2 date or not.
 > **Java**
 ```java
-editText.addTextChangedListener(new SimpleTextWatcher(new SimpleTextWatcher.TWAfterTextChanged() {
+editText.addTextChangedListener(new SimpleTextWatcher(new AfterTextChanged() {
     @Override
     public void afterTextChanged(Editable s) {
         Log.d(TAG, "afterTextChanged: "+s.toString());
@@ -132,7 +132,7 @@ editText.addTextChangedListener(new SimpleTextWatcher(new SimpleTextWatcher.TWAf
 ```
 > **Kotlin**
 ```kotlin
-editText.addTextChangedListener(SimpleTextWatcher(object : SimpleTextWatcher.TWAfterTextChanged {
+editText.addTextChangedListener(SimpleTextWatcher(object : AfterTextChanged {
     override fun afterTextChanged(s: Editable) {
         Log.d(TAG, "afterTextChanged: $s")
     }
@@ -144,6 +144,8 @@ editText.addTextChangedListener(SimpleTextWatcher(object : SimpleTextWatcher.TWA
 ### Version
 - **1.0.0**
   - First Release
+- **1.0.1**
+  - Simple CallBack
 
 ---
 
