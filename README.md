@@ -18,7 +18,6 @@
 * [Feature List](#feature-list)
 * [Tech stack and 3rd library](#tech-stack-and-3rd-library)
 * [Usage](#usage)
-* [Example Code/App](#example-codeapp)
 * [Version](#version)
 * [Contribution](#contribution)
 
