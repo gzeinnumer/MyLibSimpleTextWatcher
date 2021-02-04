@@ -110,7 +110,6 @@ editText.addTextChangedListener(new SimpleTextWatcher(new AfterTextChanged() {
     }
 }));
 ```
-```
 
 ---
 # Version
