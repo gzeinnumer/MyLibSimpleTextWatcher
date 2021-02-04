@@ -16,6 +16,7 @@
 # Content List
 * [Download](#download)
 * [Feature List](#feature-list)
+* [Tech stack and 3rd library](#tech-stack-and-3rd-library)
 * [Usage](#usage)
 * [Example Code/App](#example-codeapp)
 * [Version](#version)
@@ -42,9 +43,9 @@ dependencies {
 
 ---
 # Feature List
-- [x] **beforeTextChanged.**
-- [x] **onTextChanged.**
-- [x] **afterTextChanged.**
+- [x] [beforeTextChanged](#beforetextchanged)
+- [x] [onTextChanged](#ontextchanged)
+- [x] [afterTextChanged](#aftertextchanged)
 
 ---
 # Tech stack and 3rd library
@@ -53,7 +54,7 @@ dependencies {
 ---
 # Usage
 
-### Common Code  
+### TextWacher Default Method Callback  
 > **Java**
 ```java
 editText.addTextChangedListener(new TextWatcher() {
@@ -73,22 +74,6 @@ editText.addTextChangedListener(new TextWatcher() {
     }
 });
 ```
-> **Kotlin**
-```kotlin
-editText.addTextChangedListener(object : TextWatcher {
-    override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-        Log.d(TAG, "beforeTextChanged: " + s + "_" + start + "_" + count + "_" + after)
-    }
-
-    override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-        Log.d(TAG, "onTextChanged: " + s + "_" + start + "_" + before + "_" + count)
-    }
-
-    override fun afterTextChanged(s: Editable) {
-        Log.d(TAG, "afterTextChanged: $s")
-    }
-})
-```
 #
 ### beforeTextChanged.
 > **Java**
@@ -99,14 +84,6 @@ editText.addTextChangedListener(new SimpleTextWatcher(new BeforeTextChanged() {
         Log.d(TAG, "beforeTextChanged: "+s+"_"+start+"_"+count+"_"+after);
     }
 }));
-```
-> **Kotlin**
-```kotlin
-editText.addTextChangedListener(SimpleTextWatcher(object : BeforeTextChanged {
-    override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-        Log.d(TAG, "beforeTextChanged: " + s + "_" + start + "_" + count + "_" + after)
-    }
-}))
 ```
 
 #
@@ -119,14 +96,6 @@ editText.addTextChangedListener(new SimpleTextWatcher(new OnTextChanged() {
         Log.d(TAG, "onTextChanged: "+s+"_"+start+"_"+before+"_"+count);
     }
 }));
-```
-> **Kotlin**
-```kotlin
-editText.addTextChangedListener(SimpleTextWatcher(object : OnTextChanged {
-    override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-        Log.d(TAG, "onTextChanged: " + s + "_" + start + "_" + before + "_" + count)
-    }
-}))
 ```
 
 #
@@ -141,13 +110,6 @@ editText.addTextChangedListener(new SimpleTextWatcher(new AfterTextChanged() {
     }
 }));
 ```
-> **Kotlin**
-```kotlin
-editText.addTextChangedListener(SimpleTextWatcher(object : AfterTextChanged {
-    override fun afterTextChanged(s: Editable) {
-        Log.d(TAG, "afterTextChanged: $s")
-    }
-}))
 ```
 
 ---
